@@ -9,4 +9,6 @@ oidc:
     bucket:
 backend:
   context:
+  neo4jTarballUrl:
+  solrTarballUrl:
 

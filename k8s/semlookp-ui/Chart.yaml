@@ -1,6 +1,0 @@
-apiVersion: v2
-name: semlookp-ui
-description: A Helm chart to deploy the semlookp-ui.
-type: application
-version: 0.0.4
-appVersion: "1.0.0"

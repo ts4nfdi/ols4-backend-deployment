@@ -4,7 +4,6 @@ metadata:
   creationTimestamp: null
   name: {{ .Release.Name }}-pvc
 spec:
-{{/*  storageClassName: standard-nfs-production*/}}
   accessModes:
     - ReadWriteOnce
   resources:

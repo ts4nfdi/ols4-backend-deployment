@@ -3,8 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: {{ .Release.Name }}-neo4j-pvc
 spec:
-{{/*  storageClassName: local-storage*/}}
-{{/*  volumeName: ols4-neo4j-pv*/}}
   accessModes:
     - ReadWriteOnce
   resources:

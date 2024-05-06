@@ -35,7 +35,7 @@ spec:
               memory: 2000Mi
           env:
             - name: SOLR_TARBALL_URL
-              value: {{.Values.solrTarballUrl}}
+              value: {{.Values.backend.solrTarballUrl}}
             - name: SOLR_HOME
               value: /data
           ports:
