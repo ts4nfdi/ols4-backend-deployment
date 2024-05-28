@@ -2,7 +2,6 @@ ingress:
   dns:
   enableSSL:
   certIssuer:
-imageTag:
 oidc:
   data:
     host:
@@ -11,4 +10,6 @@ backend:
   context:
   neo4jTarballUrl:
   solrTarballUrl:
-
+  backendImage:
+  solrImage:
+  neo4jImage:

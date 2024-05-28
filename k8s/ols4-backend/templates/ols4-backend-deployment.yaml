@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: >-
-            ghcr.io/ebispot/ols4-backend:{{.Values.imageTag}}
+          image: {{.Values.backend.backendImage}}
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

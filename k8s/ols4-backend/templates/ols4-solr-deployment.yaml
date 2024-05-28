@@ -22,7 +22,7 @@ spec:
         fsGroup: 8983
       containers:
         - name: solr
-          image: ghcr.io/ebispot/ols4-solr:9.0.0
+          image: {{.Values.backend.backendImage}}
           volumeMounts:
             - mountPath: "/data"
               name: {{ .Release.Name }}-solr-storage
