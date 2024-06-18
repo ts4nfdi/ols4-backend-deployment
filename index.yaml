@@ -3,6 +3,15 @@ entries:
   ols4-backend:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-06-18T14:31:04.296892647Z"
+    description: A Helm chart to deploy the ols4 backend
+    digest: 91d52021e182da186ceeecd1ca3c2df48499bb7a8654b5c0e093d80b324d74f0
+    name: ols4-backend
+    urls:
+    - https://github.com/ts4nfdi/ols4-backend-deployment/releases/download/ols4-backend-0.1.7/ols4-backend-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-28T14:06:25.524122185Z"
     description: A Helm chart to deploy the ols4 backend
     digest: 6f08936486a8b42351c1512ba1a2894b6d80c278bcf22747a9443378c3dcb8f0
@@ -29,4 +38,4 @@ entries:
     urls:
     - https://github.com/ts4nfdi/ols4-backend-deployment/releases/download/ols4-dataserver-0.1.2/ols4-dataserver-0.1.2.tgz
     version: 0.1.2
-generated: "2024-05-28T14:06:25.524133937Z"
+generated: "2024-06-18T14:31:04.296913786Z"
