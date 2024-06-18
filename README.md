@@ -34,8 +34,8 @@ sudo chown -R username:username /solr.tgz
 
 ### Deploy ols4-dataserver
 ```bash
-helm repo add semlookp-deployment https://zbmed.github.io/semlookp-deployment/
-helm install ols4-dataserver semlookp-deployment/ols4-dataserver
+helm repo add semlookp-deployment https://ts4nfdi.github.io/ols4-backend-deployment/
+helm install ols4-dataserver ols4-backend-deployment/ols4-dataserver
 ```
 
 ### Upload data to ols4-dataserver
@@ -48,9 +48,11 @@ kubectl cp /solr-meshd-v1.tgz ols4-dataserver-7d9d88cd86-n98fb:/usr/share/nginx/
 ```bash
 helm install <your release name> \
 --set-json='ingress.dns="<your domain>"'  \
---set-json='imageTag="dev"'  \
+--set-json='backend.backendImage="ghcr.io/ebispot/ols4-backend:stable"'  \
+--set-json='solrImage="ghcr.io/ebispot/ols4-solr:9.0.0"'  \
+--set-json='neo4jImage="ghcr.io/ebispot/ols4-neo4j:4.4.9-community"'  \
 --set-json='backend.context="/ols4"'  \
---set-json='backend.neo4jTarballUrl="http://ols4-dataserver/neo4j.tgz"'  \
---set-json='backend.solrTarballUrl="http://ols4-dataserver/solr.tgz"'  \
-semlookp-deployment/k8s/ols4-backend
+--set-json='neo4jTarballUrl="http://ols4-dataserver/neo4j-nfdi4health.tgz"'  \
+--set-json='solrTarballUrl="http://ols4-dataserver/solr-nfdi4health.tgz"'  \
+ols4-backend-deployment/ols4-backend
 ```

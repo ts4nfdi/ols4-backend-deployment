@@ -22,7 +22,7 @@ spec:
         fsGroup: 8983
       containers:
         - name: solr
-          image: {{.Values.backend.backendImage}}
+          image: {{.Values.solrImage}}
           volumeMounts:
             - mountPath: "/data"
               name: {{ .Release.Name }}-solr-storage
@@ -35,7 +35,7 @@ spec:
               memory: 2000Mi
           env:
             - name: SOLR_TARBALL_URL
-              value: {{.Values.backend.solrTarballUrl}}
+              value: {{.Values.solrTarballUrl}}
             - name: SOLR_HOME
               value: /data
           ports:

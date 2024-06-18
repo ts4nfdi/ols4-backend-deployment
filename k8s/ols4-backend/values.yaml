@@ -8,8 +8,8 @@ oidc:
     bucket:
 backend:
   context:
-  neo4jTarballUrl:
-  solrTarballUrl:
   backendImage:
-  solrImage:
-  neo4jImage:
+solrImage:
+neo4jImage:
+neo4jTarballUrl:
+solrTarballUrl:
