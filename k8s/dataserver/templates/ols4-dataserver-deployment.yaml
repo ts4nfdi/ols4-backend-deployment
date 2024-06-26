@@ -14,16 +14,6 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
-{{/*      affinity:*/}}
-{{/*        nodeAffinity:*/}}
-{{/*          requiredDuringSchedulingIgnoredDuringExecution:*/}}
-{{/*            nodeSelectorTerms:*/}}
-{{/*              - matchExpressions:*/}}
-{{/*                - key: kubernetes.io/hostname*/}}
-{{/*                  operator: In*/}}
-{{/*                  values:*/}}
-{{/*                    - hh-rke-wp-webadmin-47-worker-4.caas.ebi.ac.uk*/}}
-{{/*                    - hx-rke-wp-webadmin-40-worker-4.caas.ebi.ac.uk*/}}
       containers:
         - name: dataserver
           image: nginx:1.23.3
@@ -35,11 +25,14 @@ spec:
           resources:
             requests:
               memory: 4Gi
-{{/*              cpu: 0.5*/}}
             limits:
               memory: 4Gi
-{{/*              cpu: 2*/}}
       volumes:
-      - name: {{.Release.Name}}-data
-        persistentVolumeClaim:
-          claimName: {{.Release.Name}}-pvc
+        - name: {{.Release.Name}}-data
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteMany" ]
+                resources:
+                  requests:
+                    storage: 50Gi

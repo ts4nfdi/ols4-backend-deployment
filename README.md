@@ -34,7 +34,7 @@ sudo chown -R username:username /solr.tgz
 
 ### Deploy ols4-dataserver
 ```bash
-helm repo add semlookp-deployment https://ts4nfdi.github.io/ols4-backend-deployment/
+helm repo add ols4-backend-deployment https://ts4nfdi.github.io/ols4-backend-deployment/
 helm install ols4-dataserver ols4-backend-deployment/ols4-dataserver
 ```
 
