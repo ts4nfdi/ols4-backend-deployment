@@ -2,6 +2,7 @@ ingress:
   dns:
   enableSSL:
   certIssuer:
+  path:
 oidc:
   data:
     host:

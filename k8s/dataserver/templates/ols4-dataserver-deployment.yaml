@@ -28,11 +28,6 @@ spec:
             limits:
               memory: 4Gi
       volumes:
-        - name: {{.Release.Name}}-data
-          ephemeral:
-            volumeClaimTemplate:
-              spec:
-                accessModes: [ "ReadWriteMany" ]
-                resources:
-                  requests:
-                    storage: 50Gi
+      - name: {{.Release.Name}}-data
+        persistentVolumeClaim:
+          claimName: {{.Release.Name}}-pvc

@@ -20,11 +20,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          resources:
-            requests:
-              memory: 5000Mi
-            limits:
-              memory: 5000Mi
           env:
             - name: OLS_SOLR_HOST
               value: http://{{ .Release.Name }}-solr:8983
